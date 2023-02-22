@@ -6,8 +6,8 @@ import { action } from "@storybook/addon-actions";
 import "index.scss";
 
 import Button from "components/Button";
-import DayList from "components/DayList";
 import DayListItem from "components/DayListItem";
+import DayList from "components/DayList";
 import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
 
@@ -96,10 +96,9 @@ storiesOf("InterviewerListItem", module)
   ))
   .add("Clickable", () => (
     <InterviewerListItem
-      id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
-      setInterviewer={action("setInterviewer")}
+      setInterviewer={() => action("setInterviewer")(interviewer.id)}
     />
   ));
 
