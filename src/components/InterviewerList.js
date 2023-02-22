@@ -1,5 +1,5 @@
 import React from "react";
-import 'components/InterviewerList.scss'
+import 'components/InterviewerList.scss';
 import InterviewerListItem from "./InterviewerListItem";
 
 // Props
@@ -7,24 +7,24 @@ import InterviewerListItem from "./InterviewerListItem";
 // setInterviewer:function - a function that accepts an interviewer id. This function will simply be passed down to the <InterviewerListItem>
 // interviewer:number - a number that represents the id of the currently selected interviewer
 
-export default function InterviewerList(props){
+export default function InterviewerList(props) {
 
-const interviewArray = props.interviewers.map((interviewer) => {
-  return <InterviewerListItem
-  key={interviewer.id}
-  name={interviewer.name}
-  avatar={interviewer.avatar}
-  selected={interviewer.id === props.value}
-  setInterviewer={() => props.onChange(interviewer.id)}/>
-});
+  const interviewArray = props.interviewers.map((interviewer) => {
+    return <InterviewerListItem
+      key={interviewer.id}
+      name={interviewer.name}
+      avatar={interviewer.avatar}
+      selected={interviewer.id === props.value}
+      setInterviewer={() => props.onChange(interviewer.id)} />;
+  });
 
-return (
-  <section className="interviewers">
-  <h4 className="interviewers__header text--light">Interviewer</h4>
-  <ul className="interviewers__list">
-    {interviewArray}
-  </ul>
-</section>
-)
+  return (
+    <section className="interviewers">
+      <h4 className="interviewers__header text--light">Interviewer</h4>
+      <ul className="interviewers__list">
+        {interviewArray}
+      </ul>
+    </section>
+  );
 
 }
