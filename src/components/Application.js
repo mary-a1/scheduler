@@ -30,9 +30,35 @@ export default function Application() {
         const days = all[0].data;
         const appointments = all[1].data;
         const interviewers = all[2].data;
-        setState(prev => ({ ...prev, days, appointments, interviewers }));
+        setState(prev => ({
+          ...prev, days, appointments, interviewers
+        }));
       });
   }, []);
+
+  function bookInterview(id, interview) {
+    // console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    return axios.put(`/api/appointments/${id}`, { interview })
+      .then((res) => {
+        console.log(res.data);
+        setState({
+          ...state,
+          appointments
+        });
+      }).catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <main className="layout">
@@ -64,7 +90,8 @@ export default function Application() {
             key={appointment.id}
             {...appointment}
             interview={interview}
-            interviewers={interviewers} />;
+            interviewers={interviewers}
+            bookInterview={bookInterview} />;
         })}
         <Appointment key="last" time="5pm" />
       </section>
