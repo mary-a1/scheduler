@@ -55,9 +55,7 @@ export default function Application() {
           ...state,
           appointments
         });
-      }).catch((error) => {
-        console.log(error);
-      });
+      })
   }
 
   function cancelInterview(id) {
