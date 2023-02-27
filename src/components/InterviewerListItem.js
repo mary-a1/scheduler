@@ -9,7 +9,7 @@ import classNames from "classnames";
 // setInterviewer:function - is run when the <InterviewerListItem> is clicked. This function receives the interviewer's id as an argument. It sets the selected interviewer.
 
 export default function InterviewerListItem(props) {
-const {id, name, avatar, selected, setInterviewer } = props;
+const { name, avatar, selected, setInterviewer } = props;
 
 const interviewerClass = classNames("interviewers__item", {
   "interviewers__item--selected": selected,
