@@ -21,7 +21,7 @@ return (
   <img
     className="interviewers__item-image"
     src={avatar}
-    alt="Sylvia Palmer"
+    alt={name}
   />
    {selected && name} 
 </li>
