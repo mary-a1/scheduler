@@ -4,7 +4,6 @@ import React from "react";
 // message:String eg. "Deleting"
 
 export default function Status(props) {
-
   return (
     <main className="appointment__card appointment__card--status">
       <img

@@ -127,9 +127,6 @@ describe("Application", () => {
 
   });
 
-
-
-
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
     // 1. Render the Application.
     const { container } = render(<Application />);
@@ -162,7 +159,4 @@ describe("Application", () => {
 
     expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
   });
-
-
-
 });
