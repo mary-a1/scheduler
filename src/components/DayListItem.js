@@ -9,6 +9,7 @@ import classNames from "classnames";
 // setDay:Function accepts the name of the day eg. "Monday", "Tuesday"
 export default function DayListItem(props) {
   const { spots } = props;
+  
   const formatSpots = () => {
     if (spots === 1) {
       return <span>1 spot remaining</span>;
@@ -17,6 +18,7 @@ export default function DayListItem(props) {
     }
     return (<span>{spots} spots remaining</span>);
   };
+  
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0

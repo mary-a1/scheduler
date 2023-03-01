@@ -19,14 +19,14 @@ export default function Show(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <img
-            className="appointment__actions-button" 
+            className="appointment__actions-button"
             onClick={props.onEdit}
             src="images/edit.png"
             alt="Edit"
           />
           <img
             className="appointment__actions-button"
-            onClick={props.onDelete} 
+            onClick={props.onDelete}
             src="images/trash.png"
             alt="Delete"
           />

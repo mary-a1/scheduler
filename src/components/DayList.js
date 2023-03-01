@@ -8,12 +8,12 @@ import DayListItem from "./DayListItem";
 // setDay:Function sets the currently selected day and accepts the name of the day eg. "Monday", "Tuesday"
 export default function DayList(props) {
   const dayArray = props.days.map((day) => {
-    return <DayListItem 
-    key={day.id}
-    name={day.name}
-    spots={day.spots}
-    selected={day.name === props.value}
-    setDay={props.onChange}/>
+    return <DayListItem
+      key={day.id}
+      name={day.name}
+      spots={day.spots}
+      selected={day.name === props.value}
+      setDay={props.onChange} />;
   });
 
   return (

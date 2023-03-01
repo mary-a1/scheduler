@@ -30,7 +30,7 @@ const useApplicationData = () => {
   }, []);
 
   function updateSpots(day, days, appointments) {
-    
+
     const selectedDay = days.find((randomDay) => randomDay.name === day);
     const selectedAppointments = selectedDay.appointments;
 
@@ -44,7 +44,6 @@ const useApplicationData = () => {
   }
 
   function bookInterview(id, interview) {
-    // console.log(id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -77,13 +76,14 @@ const useApplicationData = () => {
 
     return axios.delete(`/api/appointments/${id}`)
       .then((response) => {
-        // setState({ ...state, appointments });
         state.appointments[id].interview = null;
         updateSpots(state.day, state.days, state.appointments);
-        setState({ ...state, appointments: state.appointments, days: state.days });
+        setState({
+          ...state,
+          appointments: state.appointments,
+          days: state.days
+        });
       });
-
-
   }
 
   return { state, setDay, bookInterview, cancelInterview };

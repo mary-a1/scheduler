@@ -4,6 +4,7 @@ import "components/Button.scss";
 import classNames from "classnames";
 
 /*
+Props
 Base uses no props 
 Confirm uses the confirm prop 
 Danger uses the danger prop 

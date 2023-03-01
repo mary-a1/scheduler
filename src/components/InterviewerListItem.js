@@ -1,5 +1,5 @@
 import React from "react";
-import 'components/InterviewerListItem.scss'
+import 'components/InterviewerListItem.scss';
 import classNames from "classnames";
 
 // props id:number - the id of the interviewer
@@ -9,23 +9,23 @@ import classNames from "classnames";
 // setInterviewer:function - is run when the <InterviewerListItem> is clicked. This function receives the interviewer's id as an argument. It sets the selected interviewer.
 
 export default function InterviewerListItem(props) {
-const { name, avatar, selected, setInterviewer } = props;
+  const { name, avatar, selected, setInterviewer } = props;
 
-const interviewerClass = classNames("interviewers__item", {
-  "interviewers__item--selected": selected,
-  "interviewers__item-image": avatar
-});
+  const interviewerClass = classNames("interviewers__item", {
+    "interviewers__item--selected": selected,
+    "interviewers__item-image": avatar
+  });
 
-return (
-  <li className={interviewerClass} onClick={setInterviewer}>
-  <img
-    className="interviewers__item-image"
-    src={avatar}
-    alt={name}
-  />
-   {selected && name} 
-</li>
-)
+  return (
+    <li className={interviewerClass} onClick={setInterviewer}>
+      <img
+        className="interviewers__item-image"
+        src={avatar}
+        alt={name}
+      />
+      {selected && name}
+    </li>
+  );
 
 
 }

@@ -9,7 +9,7 @@ afterEach(cleanup);
 
 describe("Appointment", () => {
   
-  xit("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<Appointment />);
   });
 })
