@@ -80,7 +80,7 @@ const useApplicationData = () => {
         updateSpots(state.day, state.days, state.appointments);
         setState({
           ...state,
-          appointments: state.appointments,
+          appointments,
           days: state.days
         });
       });
