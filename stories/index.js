@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { Fragment } from 'react'
+import { Fragment } from 'react';
 import "index.scss";
 
 import Button from "components/Button";
@@ -15,6 +15,7 @@ import Header from "components/Appointment/Header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
 import Confirm from "components/Appointment/Confirm";
+import Error from "components/Appointment/Error";
 import Status from "components/Appointment/Status";
 import Form from "components/Appointment/Form";
 
@@ -186,9 +187,15 @@ storiesOf("Appointment", module)
     />
   )
 
-  .add("Error", () =>
+  .add("Error Saving", () =>
     <Error
-      message="Could not delete appointment."
+      message="Could not save appointment."
+      onClose={action("onClose")}
+    />
+  )
+  .add("Error Deleting", () =>
+    <Error
+      message="Could not cancel appointment."
       onClose={action("onClose")}
     />
   )
@@ -227,4 +234,4 @@ storiesOf("Appointment", module)
       />
       <Appointment time="5pm" />
     </Fragment>
-  ))
+  ));

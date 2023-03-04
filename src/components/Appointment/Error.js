@@ -4,6 +4,7 @@ import React from "react";
 // message:String eg. "Could not delete appointment."
 // onClose:Function to be called when the user clicks the Close button
 
+
 export default function Error(props) {
   return (
     <main className="appointment__card appointment__card--error">
@@ -13,9 +14,9 @@ export default function Error(props) {
       </section>
       <img
         className="appointment__error-close"
-        onClick={props.onClose}
         src="images/close.png"
         alt="Close"
+        onClick={props.onClose}
       />
     </main>
   );
