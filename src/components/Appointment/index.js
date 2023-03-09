@@ -40,7 +40,7 @@ export default function Appointment(props) {
   }
 
   function cancel() {
-    transition(DELETING);
+    transition(DELETING, true);
 
     props.cancelInterview(props.id)
       .then(() => {
@@ -104,7 +104,7 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE && (
         <Error
           message="Could not cancel appointment"
-          onClose={()=>transition(SHOW)}
+          onClose={back}
         />
       )}
       {mode === ERROR_SAVE && (
