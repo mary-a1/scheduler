@@ -167,7 +167,7 @@ storiesOf("Appointment", module)
   .add("Show", () =>
     <Show
       student="Lydia Miller-Jones"
-      interviewer={interviewer.name}
+      interviewer={interviewer}
       onEdit={action("onEdit")}
       onDelete={action("onDelete")}
     />
@@ -187,13 +187,7 @@ storiesOf("Appointment", module)
     />
   )
 
-  .add("Error Saving", () =>
-    <Error
-      message="Could not save appointment."
-      onClose={action("onClose")}
-    />
-  )
-  .add("Error Deleting", () =>
+  .add("Error", () =>
     <Error
       message="Could not cancel appointment."
       onClose={action("onClose")}

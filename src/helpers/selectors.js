@@ -1,3 +1,8 @@
+/**
+ * This function takes in the object in our state.days array who's 
+ * name matches the provided day.
+ * @returns the an array of the appointments for that day.
+ */
 function getAppointmentsForDay(state, day) {
   const foundDay = state.days.find(dy => dy.name === day);
 
@@ -12,7 +17,10 @@ function getAppointmentsForDay(state, day) {
   
   return appointments;
 }
-
+/**
+ * This function takes in the array state and the interview object.
+ * @returns a new object containing the interview data.
+ */
 function getInterview(state, interview) {
   if (!interview) {
     return null;
@@ -30,7 +38,10 @@ function getInterview(state, interview) {
 
   return interviewObj;
 }
-
+/**
+ * This function takes in the object in our state.days array that matches the day 
+ * @returns an interviewers array
+ */
 function getInterviewersForDay(state, day) {
   const foundDay = state.days.find(dy => dy.name === day);
 
