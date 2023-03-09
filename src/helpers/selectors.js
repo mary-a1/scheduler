@@ -39,7 +39,8 @@ function getInterview(state, interview) {
   return interviewObj;
 }
 /**
- * This function takes in the object in our state.days array that matches the day 
+ * This function takes in the object in our state.days array who's 
+ * name matches the provided day. 
  * @returns an interviewers array
  */
 function getInterviewersForDay(state, day) {
